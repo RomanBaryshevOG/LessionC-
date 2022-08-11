@@ -11,3 +11,5 @@ if (firstDigit == secondDigit) Console.WriteLine($"Цифры равны = {numb
 else if (firstDigit > secondDigit) Console.WriteLine($"Наибольшая цифра числа {number} =  {firstDigit}");
 else Console.WriteLine($"Наибольшая цифра числа {number} = {secondDigit}");
 
+// тернарный оператор
+// int result = firstDigit > secondDigit ?(тогда) firstDigit :(иначе) secondDigit;
