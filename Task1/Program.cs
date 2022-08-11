@@ -5,8 +5,8 @@ Console.Write("Введите первое число: ");
 int num1 = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите второе число: ");
 int num2 = Convert.ToInt32(Console.ReadLine());
-int quadro = num1 * num1;
-if (quadro == num2)
+int quadro = num2 * num2;
+if (quadro == num1)
 {
     Console.Write($"Первое число {num1} является квадратом числа {num2}");
 }
