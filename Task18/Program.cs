@@ -47,5 +47,5 @@ int[] GetSumPos(int [] array)
 int[] arr = CreateArrayRndInt(12, -9, 9);
 PrintArray(arr);
 int[] sumPosNeg = GetSumPos(arr);
-Console.WriteLine($"Сумма отрицательных чисел = {sumPosNeg[0]}");
+Console.WriteLine($"Сумма отрицательных чисел = {sumPosNeg[0]}"); // 0 это индекс
 Console.WriteLine($"Сумма положительных = {sumPosNeg [1]}");
