@@ -6,46 +6,50 @@
 // положительных чисел равна 29, сумма отрицательных равна
 // -20.
 
-int[] CreateArrayRndInt(int size, int min, int max)
+int[] CreateArrayRndInt(int size, int min, int max) // тип возвращаемого знаения, имя метода, RndInt случайных целых чисел, в скобках параметр размер масива, промежуток мин и макс.
 
 
 {
-     int[] array = new int [size];
-     Random rnd = new Random();
+     int[] array = new int [size]; // создаем массив
+     Random rnd = new Random(); // создать объект который содержит метод для работы со случайными числами, файлик с методами
 
-     for (int i = 0; i < size; i++)
+     for (int i = 0; i < size; i++)  // цикл для прохождения всех элементов массива
      {
-        array[i] = rnd.Next(min, max + 1);
+        array[i] = rnd.Next(min, max + 1); // заполняем массив, последнее значение не входит в диапазон
      }
-     return array;
+     return array; // возвращаем массив
 }
 
-void PrintArray(int[] array)
+void PrintArray(int[] array) // создадим метод для печати массива в консоль, в качестве параметра массив который создали
 {
-    for (int i = 0; i < array.Length; i++)
+    Console.Write("[");
+    for (int i = 0; i < array.Length; i++) // цикл для прохождения по всем числам массива
     {
     
-        Console.Write($"{array[i]} ");
+        if (i < array.Length -1) Console.Write($"{array[i]}, "); // выводим в консоль, добваляем пробел для отступа между числами
+        else Console.Write(array[i]); // чтобы у последнего числа небыло запятой
     }
+    Console.Write("]");
+    Console.WriteLine();
 }
 
 
-int[] GetSumPos(int [] array)
+int[] GetSumPos(int [] array) // метод 
 {
-    int sumNeg = 0;
-    int sumPos = 0;
+    int sumNeg = 0; // переменная для суммирования, накопитель для отрицательных
+    int sumPos = 0; // переменная для положительных
 
-    for (int i = 0; i < array.Length; i++)
+    for (int i = 0; i < array.Length; i++) 
     {
-        if(array[i] < 0) sumNeg += sumNeg += array[i];
-        else sumPos += array[i];
+        if(array[i] < 0) sumNeg += array[i]; // прибавляем этот элемент в переменную
+        else sumPos += array[i]; // 
     }
 
-    return new int[]{sumNeg, sumPos};
+    return new int[]{sumNeg, sumPos}; // создали массив с двумя элементами 
 }
 
-int[] arr = CreateArrayRndInt(12, -9, 9);
+int[] arr = CreateArrayRndInt(12, -9, 9); // присвоили arr метод Create
 PrintArray(arr);
-int[] sumPosNeg = GetSumPos(arr);
+int[] sumPosNeg = GetSumPos(arr); // присвоили переменную, возвращаем метод
 Console.WriteLine($"Сумма отрицательных чисел = {sumPosNeg[0]}"); // 0 это индекс
 Console.WriteLine($"Сумма положительных = {sumPosNeg [1]}");
